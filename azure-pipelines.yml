@@ -1,0 +1,18 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+jobs:
+- job: openFile
+  displayName: 'Open File Job'
+
+  steps:
+  - powershell: |
+      # Navigate to the scripts directory
+      cd $(Build.Repository.LocalPath)\scripts
+
+      # Run the open_file.ps1 script
+      .\open_file.ps1
+    displayName: 'Open File'

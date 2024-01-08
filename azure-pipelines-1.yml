@@ -1,0 +1,15 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+jobs:
+- job: checkWindowsUpdate
+  displayName: 'Check Windows Update Job'
+
+  steps:
+  - powershell: |
+      # Run the check_windows_update.ps1 script from the specified folder
+      & 'C:\Users\Badrinath Sonawane\Desktop\Azure DevOps\Test1\check_windows_update.ps1'
+    displayName: 'Check Windows Update'
